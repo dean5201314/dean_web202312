@@ -13,23 +13,23 @@
   <style>
     .box {
       display: flex;
-      width: 550px;
-      height: 200px;
+      width: 400px;
+      height: 150px;
       justify-content: space-around;
       align-items: center;
       border: 1px solid black;
     }
 
     .item {
-      width: 150px;
-      height: 150px;
+      width: 100px;
+      height: 100px;
     }
 
     .my-container {
-      background-color: lightpink;
+      /* background-color: lightpink; */
       position: relative;
       height: 90vh;
-      /* overflow: hidden; */
+      overflow: hidden;
     }
 
     #myImg {
@@ -44,10 +44,10 @@
     .myImgAnimation {
       position: absolute;
       right: -600px;
-      right: 1400px;
+      /* right: 1400px; */
       bottom: 0px;
       animation-name: example;
-      animation-duration: 10s;
+      animation-duration: 5s;
     }
 
     .myImgAnimationInit {
@@ -62,35 +62,44 @@
     @keyframes example {
       0% {
         /* background-color: red; */
-        right: -200px;
+        left: -500px;
         bottom: 0px;
       }
 
       25% {
         /* background-color: red; */
-        bottom: 200px;
+        left: 200px;
+        bottom: 50px;
+        /* transform: rotate(90deg); */
+      }
+
+      50% {
+        /* background-color: red; */
+        left: 900px;
+        bottom: 100px;
         /* transform: rotate(90deg); */
       }
 
       75% {
         /* background-color: red; */
-        bottom: 300px;
+        left: 1400px;
+        bottom: 100px;
         /* transform: rotate(180deg); */
 
       }
 
       100% {
         /* background-color: lightblue; */
-        right: 1200px;
-        bottom: 100px;
-        /* transform: rotate(270deg); */
+        left: 1920px;
+        bottom: 0px;
+        /* transform: rotate(0deg); */
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="container mt-5 my-container">
+  <div class="container-fluid mt-5 my-container">
     <div class="mb-5">
       <h1 class="text-center text-warning ">紅 綠 燈</h1>
     </div>
@@ -99,9 +108,9 @@
         <div class="box rounded-pill">
           <div id="light1" class="item bg-danger rounded-circle">
           </div>
-          <div id="light2" class="item bg-danger rounded-circle">
+          <div id="light2" class="item bg-warning rounded-circle">
           </div>
-          <div id="light3" class="item bg-danger rounded-circle">
+          <div id="light3" class="item bg-success rounded-circle">
           </div>
         </div>
       </div>
@@ -114,7 +123,9 @@
       <div class="col">
         <a
           href="https://tw.news.yahoo.com/%E5%B8%9D%E7%8E%8B%E6%A2%9D%E6%AC%BE-%E5%A5%AA%E7%BE%8E%E8%A1%93%E8%B3%BD%E7%89%B9%E5%84%AA-%E5%9C%8B%E4%B8%AD%E7%94%9F%E8%AB%B7%E8%A1%8C%E4%BA%BA%E5%A6%82%E7%9A%87%E5%B8%9D%E8%A2%AB%E7%BD%B5%E7%88%86-080337120.html">
-          <img src="./images/baby.gif" alt="紅綠燈" title="全國學生美術比賽漫畫類特優" id="myImg">
+          <!-- <img src="./images/green.png" alt="紅綠燈" title="全國學生美術比賽漫畫類特優" id="myImg"> -->
+          <img class="my-animation" src="./images/5Q0v.gif" alt="紅綠燈"  id="myImg">
+
         </a>
       </div>
     </div>
@@ -156,29 +167,29 @@
       // time start
       setTimeout(function () {
         light1.setAttribute('class', 'item bg-success rounded-circle');
-      }, 2500);
+      }, 1500);
 
       setTimeout(function () {
         light2.setAttribute('class', 'item bg-success rounded-circle');
-      }, 3000);
+      }, 2000);
 
       setTimeout(function () {
         light3.setAttribute('class', 'item bg-success rounded-circle');
         myImg.setAttribute('class', 'd-block');
         myImg.setAttribute('class', 'myImgAnimation');
-      }, 3500);
+      }, 2500);
       // time end
 
       // red
       setTimeout(function () {
         light1.setAttribute('class', 'item bg-danger rounded-circle');
-        light2.setAttribute('class', 'item bg-danger rounded-circle');
-        light3.setAttribute('class', 'item bg-danger rounded-circle');
+        light2.setAttribute('class', 'item bg-warning rounded-circle');
+        light3.setAttribute('class', 'item bg-success rounded-circle');
 
 
         initFun();
 
-      }, 13500);
+      }, 10000);
 
     });
 
