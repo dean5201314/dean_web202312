@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>99乘法表</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+    }
+    .multiplication-table {
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .row {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>99乘法表</h2>
+
+  <div id="multiplicationTable" class="multiplication-table"></div>
+
+  <script>
+    // 生成乘法表
+    function generateMultiplicationTable() {
+      const tableContainer = document.getElementById('multiplicationTable');
+
+      // 清空容器內容
+      tableContainer.innerHTML = '';
+
+      // 生成乘法表
+      for (let i = 1; i <= 9; i++) {
+        const rowContainer = document.createElement('div');
+        rowContainer.className = 'row';
+        
+        for (let j = 1; j <= 9; j++) {
+          const result = i * j;
+          
+          const expression = `${pad(i)} * ${pad(j)} = ${pad(result)}`;
+          // const expression = `${i} * ${j} = ${result}`;  //未做補零時的運算式
+          const expressionElement = document.createTextNode(expression);
+
+          rowContainer.appendChild(expressionElement);
+
+          // 添加分隔符
+          if (j < 9) {
+            rowContainer.appendChild(document.createTextNode(' | '));
+          }
+        }
+        
+        tableContainer.appendChild(rowContainer);
+      }
+    }
+
+    // 補零函數，將數字補齊為兩位數
+    function pad(number) {
+      return number.toString().padStart(2, '0');
+    }
+
+    // 載入時生成乘法表
+    window.onload = generateMultiplicationTable;
+  </script>
+
+</body>
+</html>

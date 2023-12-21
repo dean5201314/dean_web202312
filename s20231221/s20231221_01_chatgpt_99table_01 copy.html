@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>99乘法表</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 50%;
+      margin: 20px auto;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>99乘法表</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>&times;</th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th>8</th>
+        <th>9</th>
+      </tr>
+    </thead>
+    <tbody id="multiplicationTableBody">
+    </tbody>
+  </table>
+
+  <script>
+    // 生成乘法表
+    function generateMultiplicationTable() {
+      const tableBody = document.getElementById('multiplicationTableBody');
+
+      // 清空表格內容
+      tableBody.innerHTML = '';
+
+      // 生成乘法表
+      for (let i = 1; i <= 9; i++) {
+        const row = document.createElement('tr');
+        row.innerHTML = `<td>${i}</td>`;
+        for (let j = 1; j <= 9; j++) {
+          const cell = document.createElement('td');
+          cell.textContent = i * j;
+          row.appendChild(cell);
+        }
+        tableBody.appendChild(row);
+      }
+    }
+
+    // 載入時生成乘法表
+    window.onload = generateMultiplicationTable;
+  </script>
+
+</body>
+</html>
