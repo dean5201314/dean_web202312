@@ -26,9 +26,11 @@
             for (let j = 1; j <= 9; j++) {
                 // console.log('j', j);
                 // console.log(`${i} * ${j} = ${i * j}`);
-                text += `${i} * ${j} = ${i * j} `;                
+                text += `${i} * ${j} = ${i * j} `;  
+                // 用反引號，在 js 中用 ${} 帶入變數，以便寫入 innerHTML 中            
             }
             console.log(text);
+            // 先用 console.log() 檢查結果是否正確
         }
 
     </script>
