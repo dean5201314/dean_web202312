@@ -26,6 +26,8 @@
 
     // 重複去除
     newData = data.filter(function (value, index, array) {
+      //array.indexOf(value)找到第一個 value 的 index，若與目前的 index不同，則不回傳值
+      // === 表示為嚴格相等，所有條件相同，包含資料型態,值,...
       return array.indexOf(value) === index;
     });
     console.log('newData', newData);
