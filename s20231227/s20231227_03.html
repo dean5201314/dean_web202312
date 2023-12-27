@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    table,
+    tr,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <table>
+    <tr>
+      <th>產品</th>
+      <th>單價</th>
+      <th>數量</th>
+      <th>總價</th>
+    </tr>
+    <tr>
+      <td>
+        咖啡
+      </td>
+      <td>
+        <input type="number" name="" id="item1Price">
+      </td>
+      <td>
+        <input type="number" name="" id="item1Num">
+      </td>
+      <td>
+        <input type="number" name="" id="item1Total">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Tea
+      </td>
+      <td>
+        <input type="number" name="" id="item2Price">
+      </td>
+      <td>
+        <input type="number" name="" id="item2Num">
+      </td>
+      <td>
+        <input type="number" name="" id="item2Total">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        cola
+      </td>
+      <td>
+        <input type="number" name="" id="item3Price">
+      </td>
+      <td>
+        <input type="number" name="" id="item3Num">
+      </td>
+      <td>
+        <input type="number" name="" id="item3Total">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button type="button" id="myBtn2" onclick="myBtn2Fun(this);">500打8折</button>
+      </td>
+      <td>
+        
+      </td>
+      <td>
+        
+      </td>
+      <td>
+        <input type="number" name="" id="item4Total">
+      </td>
+    </tr>
+  </table>
+
+
+  <script>
+    function myBtn2Fun(data) {
+      console.log('myBtn2 ok');
+      if (item4Total.value > 500) {
+        item4Total.value = item4Total.value * 0.8
+      }      
+    }
+
+    const item1Price = document.getElementById('item1Price');
+    const item1Num = document.getElementById('item1Num');
+    const item1Total = document.getElementById('item1Total');
+    
+    const item2Price = document.getElementById('item2Price');
+    const item2Num = document.getElementById('item2Num');
+    const item2Total = document.getElementById('item2Total');
+    
+    const item3Price = document.getElementById('item3Price');
+    const item3Num = document.getElementById('item3Num');
+    const item3Total = document.getElementById('item3Total');
+
+    const item4Total = document.getElementById('item4Total');
+
+    // 1.
+    // item1
+    item1Price.addEventListener('change', function () {
+      console.log('item1Price ok');
+      item1Total.value = item1Price.value * item1Num.value;
+      item4Total.value=Number(item1Total.value)+Number(item2Total.value)+Number(item3Total.value);
+    });
+
+    item1Num.addEventListener('change', function () {
+      console.log('item1Num ok');
+      item1Total.value = item1Price.value * item1Num.value;
+      item4Total.value=Number(item1Total.value)+Number(item2Total.value)+Number(item3Total.value);
+    });
+
+    item1Total.addEventListener('click', function () {
+      console.log('item2Total click ok');
+      item1Total.value = item1Price.value * item1Num.value;
+      item4Total.value=Number(item1Total.value)+Number(item2Total.value)+Number(item3Total.value);
+    });
+
+    // item2
+    item2Price.addEventListener('change', function () {
+      console.log('item2Price ok');
+      item2Total.value = item2Price.value * item2Num.value;
+      item4Total.value=Number(item1Total.value)+Number(item2Total.value)+Number(item3Total.value);
+    });
+
+    item2Num.addEventListener('change', function () {
+      console.log('item2Num ok');
+      item2Total.value = item2Price.value * item2Num.value;
+      item4Total.value=Number(item1Total.value)+Number(item2Total.value)+Number(item3Total.value);
+    });
+
+    item2Total.addEventListener('click', function () {
+      console.log('item2Total click ok');
+      item2Total.value = item2Price.value * item2Num.value;
+      item4Total.value=Number(item1Total.value)+Number(item2Total.value)+Number(item3Total.value);
+    });
+
+    // item3
+    item3Price.addEventListener('change', function () {
+      console.log('item3Price ok');
+      item3Total.value = item3Price.value * item3Num.value;
+      item4Total.value=Number(item1Total.value)+Number(item2Total.value)+Number(item3Total.value);
+    });
+
+    item3Num.addEventListener('change', function () {
+      console.log('item3Num ok');
+      item3Total.value = item3Price.value * item3Num.value;
+      item4Total.value=Number(item1Total.value)+Number(item2Total.value)+Number(item3Total.value);
+    });
+
+    item3Total.addEventListener('click', function () {
+      console.log('item3Total click ok');
+      item3Total.value = item3Price.value * item3Num.value;
+      item4Total.value=Number(item1Total.value)+Number(item2Total.value)+Number(item3Total.value);
+    });
+    
+
+  </script>
+</body>
+
+</html>
