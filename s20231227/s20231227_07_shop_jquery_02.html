@@ -113,19 +113,19 @@
       }
 
       function item2Fun() {
-        let getitem2Price = Number(item2Price.val());
-        let getitem2Num = Number(item2Num.val());
-        let resultitem2Total = getitem2Price * getitem2Num;
-        item2Total.val(resultitem2Total);
+        let getItem2Price = Number(item2Price.val());
+        let getItem2Num = Number(item2Num.val());
+        let resultItem2Total = getItem2Price * getItem2Num;
+        item2Total.val(resultItem2Total);
       }
 
       function item3Fun() {
-        let getitem3Price = Number(item3Price.val());
-        let getitem3Num = Number(item3Num.val());
-        let resultitem3Total = getitem3Price * getitem3Num;
-        item3Total.val(resultitem3Total);
+        let getItem3Price = Number(item3Price.val());
+        let getItem3Num = Number(item3Num.val());
+        let resultItem3Total = getItem3Price * getItem3Num;
+        item3Total.val(resultItem3Total);
       }
-
+      
       const item1Price = $('#item1Price');
       const item1Num = $('#item1Num');
       const item1Total = $('#item1Total');
@@ -173,6 +173,7 @@
           sum = sum * 0.8;
         }
         console.log('sum', sum);
+        console.log('e', e);
         resultSpan.text(sum);
 
       });
