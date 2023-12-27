@@ -44,7 +44,7 @@
         <input type="number" name="" id="item1Num" class="form-control" value="1">
       </td>
       <td>
-        <input type="number" name="" id="item1Total" class="form-control" value="">
+        <input type="number" name="" id="item1Total" class="form-control" value="" readonly>
       </td>
     </tr>
     <tr>
@@ -61,7 +61,7 @@
         <input type="number" name="" id="item2Num" class="form-control" value="1">
       </td>
       <td>
-        <input type="number" name="" id="item2Total" class="form-control" value="">
+        <input type="number" name="" id="item2Total" class="form-control" value="" readonly>
       </td>
     </tr>
     <tr>
@@ -78,21 +78,17 @@
         <input type="number" name="" id="item3Num" class="form-control" value="1">
       </td>
       <td>
-        <input type="number" name="" id="item3Total" class="form-control" value="">
+        <input type="number" name="" id="item3Total" class="form-control" value="" readonly>
       </td>
     </tr>
     <tr>
-      <td>
-        <button type="button" id="myBtn2" onclick="myBtn2Fun(this);">總計(500以上八折)</button>
+      <td colspan="3"  class="text-center">
+        <button type="button" class="btn btn-primary w-50" id="myBtn2" onclick="myBtn2Fun(this);">總計(500以上八折)</button>
       </td>
+      <!-- <td></td> -->
+      <!-- <td></td> -->
       <td>
-        
-      </td>
-      <td>
-        
-      </td>
-      <td>
-        <input type="number" name="" id="item4Total">
+        <input type="number" name="" id="item4Total" readonly>
       </td>
     </tr>
   </table>
@@ -100,10 +96,26 @@
 
   <script>
     function myBtn2Fun(data) {
-      console.log('myBtn2 ok');
+      // console.log('myBtn2 ok');
+      item4Total.value=Number(item1Total.value)+Number(item2Total.value)+Number(item3Total.value);
       if (item4Total.value > 500) {
         item4Total.value = item4Total.value * 0.8
       }      
+    }
+
+    function item1Fun() {      
+      item1Total.value = item1Price.value * item1Num.value;
+      // item4Total.value=Number(item1Total.value)+Number(item2Total.value)+Number(item3Total.value);
+    }
+    
+    function item2Fun() {  
+      item2Total.value = item2Price.value * item2Num.value;
+      // item4Total.value=Number(item1Total.value)+Number(item2Total.value)+Number(item3Total.value);
+    }
+    
+    function item3Fun() { 
+      item3Total.value = item3Price.value * item3Num.value;
+      // item4Total.value=Number(item1Total.value)+Number(item2Total.value)+Number(item3Total.value);
     }
 
     const item1Price = document.getElementById('item1Price');
@@ -123,59 +135,50 @@
     // 1.
     // item1
     item1Price.addEventListener('change', function () {
-      console.log('item1Price ok');
-      item1Total.value = item1Price.value * item1Num.value;
-      item4Total.value=Number(item1Total.value)+Number(item2Total.value)+Number(item3Total.value);
+      // console.log('item1Price ok');
+      item1Fun();
     });
 
     item1Num.addEventListener('change', function () {
-      console.log('item1Num ok');
-      item1Total.value = item1Price.value * item1Num.value;
-      item4Total.value=Number(item1Total.value)+Number(item2Total.value)+Number(item3Total.value);
+      // console.log('item1Num ok');
+      item1Fun();
     });
 
     item1Total.addEventListener('click', function () {
-      console.log('item2Total click ok');
-      item1Total.value = item1Price.value * item1Num.value;
-      item4Total.value=Number(item1Total.value)+Number(item2Total.value)+Number(item3Total.value);
+      // console.log('item2Total click ok');
+      item1Fun();
     });
 
     // item2
     item2Price.addEventListener('change', function () {
       console.log('item2Price ok');
-      item2Total.value = item2Price.value * item2Num.value;
-      item4Total.value=Number(item1Total.value)+Number(item2Total.value)+Number(item3Total.value);
+      item2Fun();
     });
 
     item2Num.addEventListener('change', function () {
       console.log('item2Num ok');
-      item2Total.value = item2Price.value * item2Num.value;
-      item4Total.value=Number(item1Total.value)+Number(item2Total.value)+Number(item3Total.value);
+      item2Fun();
     });
 
     item2Total.addEventListener('click', function () {
       console.log('item2Total click ok');
-      item2Total.value = item2Price.value * item2Num.value;
-      item4Total.value=Number(item1Total.value)+Number(item2Total.value)+Number(item3Total.value);
+      item2Fun();
     });
 
     // item3
     item3Price.addEventListener('change', function () {
       console.log('item3Price ok');
-      item3Total.value = item3Price.value * item3Num.value;
-      item4Total.value=Number(item1Total.value)+Number(item2Total.value)+Number(item3Total.value);
+      item3Fun();
     });
 
     item3Num.addEventListener('change', function () {
       console.log('item3Num ok');
-      item3Total.value = item3Price.value * item3Num.value;
-      item4Total.value=Number(item1Total.value)+Number(item2Total.value)+Number(item3Total.value);
+      item3Fun();
     });
 
     item3Total.addEventListener('click', function () {
       console.log('item3Total click ok');
-      item3Total.value = item3Price.value * item3Num.value;
-      item4Total.value=Number(item1Total.value)+Number(item2Total.value)+Number(item3Total.value);
+      item3Fun();
     });
     
 
