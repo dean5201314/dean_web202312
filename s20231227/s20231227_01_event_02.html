@@ -17,11 +17,11 @@
     }
 
     .bg-pink {
-      background-color: lightpink !important;
+      background-color: lightpink;
     }
 
     .bg-blue {
-      background-color: lightblue !important;
+      background-color: lightblue;
     }
   </style>
 </head>
@@ -33,18 +33,7 @@
   <!-- <button type="button" id="myBtn2" onclick="console.log('this',this);">myBtn2</button> -->
   <button type="button" id="myBtn2" onclick="myBtn2Fun(this);">myBtn2</button>
 
-  <div class="container mt-3">
-    <div class="row">
-      <div class="col">
-        <input type="text" name="" id="myInput" class="form-control">
-      </div>
-      <div class="col">
-        <input type="text" name="" id="myInput" class="form-control">
-      </div>
-    </div>
-  </div>
-
-  <div class="container mt-5">
+  <div class="container">
     <div class="row">
       <div class="col">
         <div class="bg-blue" id="box">
@@ -53,10 +42,6 @@
       </div>
     </div>
   </div>
-
-
-
-
 
 
   <script>
@@ -68,7 +53,6 @@
 
     const myBtn = document.getElementById('myBtn');
     const box = document.getElementById('box');
-    const myInput = document.getElementById('myInput');
 
     // 1.
     // myBtn
@@ -88,24 +72,12 @@
     box.addEventListener('mouseenter', function () {
       console.log('box mouseenter ok');
       this.setAttribute('class', 'bg-pink');
-      // alert('Hello Box');
+      alert('Hello Box');
     });
 
     box.addEventListener('mouseout', function () {
       console.log('box mouseout ok');
       this.setAttribute('class', 'bg-blue');
-    });
-
-    // form input 
-    myInput.addEventListener('focus', function () {
-      console.log('myInput focus');
-      this.setAttribute('class', 'form-control bg-pink');
-
-    });
-
-    myInput.addEventListener('blur', function () {
-      console.log('myInput blur');
-      this.setAttribute('class', 'form-control');
     });
 
 
